@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Firstpp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body ng-app="FirstApp">
+    <md-toolbar class="md-whiteframe-glow-z1"><h3 translate>TITLE</h3></md-toolbar>
+    <ng-view></ng-view>
+  </body>
+</html>

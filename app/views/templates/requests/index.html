@@ -1,0 +1,20 @@
+
+<md-toolbar class="md-whiteframe-glow-z1"><h3>リクエスト</h3></md-toolbar>
+<form name="form">
+
+  <md-input-container>
+    <label>From</label>
+    <md-datepicker ng-model="from"></md-datepicker>
+  </md-input-container>
+
+  <md-input-container>
+    <label>To</label>
+    <md-datepicker ng-model="to"></md-datepicker>
+  </md-input-container>
+
+  <md-button ng-disabled="form.$invalid" class="md-primary md-raised" ng-click="clickRedraw()">
+    再描画
+  </md-button>
+
+  <div id="chart-container"></div>
+</form>

@@ -1,0 +1,70 @@
+<form name="form" layout="column">
+
+  <md-input-container>
+    <label translate>WIN_RATE</label>
+    <input name="winRate" ng-model="winRate" type="number" min="0" max="100" required placeholder="勝率">
+    <span ng-messages="form.winRate.$error">
+      <span ng-message="required" translate>ERROR_REQUIRED</span>
+      <span ng-message="number" translate>ERROR_NUMBER</span>
+      <span ng-message="max" translate>ERROR_MAX</span>
+      <span ng-message="min" translate>ERROR_MIN</span>
+    </span>
+    <md-tooltip>
+      <div translate>DISCRIPTION_WIN_RATE</div>
+    </md-tooltip>
+  </md-input-container>
+
+  <md-input-container>
+    <label translate>AVERAGE_WIN_RATE</label>
+    <input name="averageGain" ng-model="averageGain" type="number" min="0" max="100" required placeholder="平均利益">
+    <span ng-messages="form.averageGain.$error">
+      <span ng-message="required" translate>ERROR_REQUIRED</span>
+      <span ng-message="number" translate>ERROR_NUMBER</span>
+      <span ng-message="max" translate>ERROR_MAX</span>
+      <span ng-message="min" translate>ERROR_MIN</span>
+    </span>
+    <md-tooltip>
+      <div translate>DISCRIPTION_AVERAGE_WIN_RATE</div>
+    </md-tooltip>
+  </md-input-container>
+
+  <md-input-container>
+    <label translate>AVERAGE_LOOSE_RATE</label>
+    <input name="averageLoss" ng-model="averageLoss" type="number" min="0" max="100" required placeholder="平均損失">
+    <span ng-messages="form.averageLoss.$error">
+      <span ng-message="required" translate>ERROR_REQUIRED</span>
+      <span ng-message="number" translate>ERROR_NUMBER</span>
+      <span ng-message="max" translate>ERROR_MAX</span>
+      <span ng-message="min" translate>ERROR_MIN</span>
+    </span>
+    <md-tooltip>
+      <div translate>DISCRIPTION_AVERAGE_LOOSE_RATE</div>
+    </md-tooltip>
+  </md-input-container>
+
+  <md-input-container>
+    <label translate>BANKRUPT_RATE</label>
+    <input name="bankruptRatio" ng-model="bankruptRatio" type="number" min="0" max="100" required placeholder="破産比率">
+    <span ng-messages="form.bankruptRatio.$error">
+      <span ng-message="required" translate>ERROR_REQUIRED</span>
+      <span ng-message="number" translate>ERROR_NUMBER</span>
+      <span ng-message="max" translate>ERROR_MAX</span>
+      <span ng-message="min" translate>ERROR_MIN</span>
+    </span>
+    <md-tooltip>
+      <div translate>DISCRIPTION_BANKRUPTS_RATE</div>
+    </md-tooltip>
+  </md-input-container>
+
+  <div layout="row" layout-align="center">
+    <md-button ng-disabled="form.$invalid" class="md-primary md-raised" ng-click="clickCalc()">
+      <div translate>RUN</div>
+    </md-button>
+  </div>
+
+  <p translate translate-values="{count: result}">DISCRIPTION_RESULT</p>
+
+  <h4 translate>CHART_TITLE</h4>
+
+  <div id="chart-container"></div>
+</form>

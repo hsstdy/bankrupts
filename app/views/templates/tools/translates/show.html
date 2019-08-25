@@ -1,0 +1,17 @@
+<div layout="column" layout-align="start start" ng-init="load()">
+  <md-input-container>
+    <md-select ng-model="to">
+      <label>to</label>
+      <md-option ng-value="item.key" ng-repeat="item in langs">{{item.text}}</md-option>
+    </md-select>
+  </md-input-container>
+  <md-input-container>
+    <label>text</label>
+    <input ng-model="text">
+  </md-input-container>
+  <md-button class="md-raised md-primary" ng-disabled="!langs" ng-click="translate()">Translate</md-button>
+  <md-input-container flex>
+    <label>結果</label>
+    <textarea disabled>{{result}}</textarea>
+  </md-input-container>
+</div>

@@ -1,0 +1,42 @@
+<div layout="column" ng-init="load()">
+  <div layout="row" layout-align="start center">
+
+    <md-input-container>
+      <label>LANGUAGE</label>
+      <md-select ng-model="langKey">
+        <md-option ng-value="item.key" ng-repeat="item in langs">{{item.text}}</md-option>
+      </md-select>
+    </md-input-container>
+
+    <md-input-container>
+      <label>TO</label>
+      <md-select ng-model="toLangKey">
+        <md-option ng-value="item.key" ng-repeat="item in langs">{{item.text}}</md-option>
+      </md-select>
+    </md-input-container>
+
+    <md-button class="md-normal" ng-disabled="!toLangKey || !langKey" ng-click="translate()">
+      TRANSLATE
+    </md-button>
+
+    <md-button class="md-normal" ng-click="translateAll()">
+      TRANSLATE_ALL
+    </md-button>
+
+    <md-button class="md-raised md-primary" ng-click="save()">
+      SAVE
+    </md-button>
+  </div>
+
+  <div class="header" layout="row">
+    <h4 flex="10" translate>LANGUAGE</h4>
+    <h4 flex="30" translate>KEY</h4>
+    <h4 flex translate>TEXT</h4>
+  </div>
+
+  <div class="header" layout="row" ng-repeat="locale in data.locales | filter: {lang: langKey}" flex>
+    <div flex="10">{{locale.lang}}</div>
+    <div flex="30">{{locale.key}}</div>
+    <div flex>{{locale.text}}</div>
+  </div>
+</div>

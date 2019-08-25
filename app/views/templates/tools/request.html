@@ -1,0 +1,33 @@
+<style>
+  md-input-container {
+    max-width: none;
+    width: auto;
+  }
+</style>
+<form name="form" layout="column" style="height: 100%;">
+  <md-input-container>
+    <label>METHOD</label>
+    <md-select ng-model="method" name="method" required>
+      <md-option value="GET">GET</md-option>
+      <md-option value="POST">POST</md-option>
+      <md-option value="PUT">PUT</md-option>
+      <md-option value="DELETE">DELETE</md-option>
+    </md-select>
+  </md-input-container>
+
+  <md-input-container>
+    <label>PATH</label>
+    <input ng-model="path" name="path" required>
+  </md-input-container>
+
+  <md-input-container>
+    <label>JSON</label>
+    <textarea ng-model="json" name="json" rows="4"></textarea>
+  </md-input-container>
+
+  <md-button class="md-primary md-raised" ng-click="clickRequest()" ng-disabled="form.$invalid">Request</md-button>
+
+  <md-content flex>
+    <div>{{result}}</div>
+  </md-content>
+</form>
